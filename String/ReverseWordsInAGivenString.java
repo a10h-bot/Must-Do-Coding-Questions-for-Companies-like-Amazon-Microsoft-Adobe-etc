@@ -25,13 +25,15 @@
 public class ReverseWordsInAGivenString {
     public static void main(String[] args) {
         String inputString = "i.like.this.program.very.much";
-        reverseWordByWord(inputString);
+        System.out.println(reverseWordByWord(inputString));
+
     }
 
-    private static void reverseWordByWord(String input) {
-        String[] strArray = input.split(".");
+    private static String reverseWordByWord(String input) {
+        String[] strArray = input.split("\\.");
         int i = 0;
         int j = strArray.length - 1;
+        StringBuilder outputString = new StringBuilder();
         while (i <= j) {
             String temp = strArray[i];
             strArray[i] = strArray[j];
@@ -40,7 +42,14 @@ public class ReverseWordsInAGivenString {
             j--;
         }
         for (int k = 0; k < strArray.length; k++) {
-            System.out.print(strArray[i] + ".");
+            if (k == strArray.length - 1) {
+                outputString.append(strArray[k]);
+            } else {
+                outputString.append(strArray[k] + ".");
+            }
+
         }
+
+        return outputString.toString();
     }
 }
