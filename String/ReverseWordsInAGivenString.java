@@ -22,11 +22,29 @@
 // much.very.program.this.like.i
 // mno.pqr
 // ** For More Input/Output Examples Use 'Expected Output' option **
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
 public class ReverseWordsInAGivenString {
     public static void main(String[] args) {
-        String inputString = "i.like.this.program.very.much";
-        System.out.println(reverseWordByWord(inputString));
-
+        Scanner sc = new Scanner(System.in);
+        int noOftestCases = sc.nextInt() + 1;
+        int count = 0;
+        // final List<String> stringInputList = new ArrayList<>(noOftestCases);
+        final String[] inputStringArray = new String[noOftestCases];
+        int l = 0;
+        while (noOftestCases-- > count) {
+            String temp = sc.nextLine();
+            // stringInputList.add(temp);
+            inputStringArray[l++] = temp;
+        }
+        for (int i = 0; i < inputStringArray.length; i++) {
+            System.out.println(reverseWordByWord(inputStringArray[i]));
+        }
+        // Arrays.stream(inputStringArray).forEach(System.out::println);
     }
 
     private static String reverseWordByWord(String input) {
