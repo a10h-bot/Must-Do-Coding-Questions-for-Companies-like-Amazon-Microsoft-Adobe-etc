@@ -44,7 +44,7 @@ public class ReverseWordsInAGivenString {
         for (int i = 0; i < inputStringArray.length; i++) {
             System.out.println(reverseWordByWord(inputStringArray[i]));
         }
-        // Arrays.stream(inputStringArray).forEach(System.out::println);
+        Arrays.stream(inputStringArray).forEach(System.out::println);
     }
 
     private static String reverseWordByWord(String input) {
